@@ -8,9 +8,15 @@
 <body>
     <h1>Budget</h1>
     <div>
+        {% if user.username %}
+            <p>Logged in as: {{user.username}}
+                <a href="/accounts/logout">Logout</a></p>
+        {% endif %}
+    </div>
+    <div>
     {% block "content" %}
 
     {% endblock "content" %}
-</div>
+    </div>
 </body>
 </html>
