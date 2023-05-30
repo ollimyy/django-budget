@@ -10,6 +10,7 @@
         <th>Service</th>
         <th>Amount</th>
         <th>Link</th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
@@ -18,6 +19,7 @@
         <td>{{ recurringpayment }}</td>
         <td>{{ recurringpayment.amount }}</td>
         <td><a href="{{ recurringpayment.url }}" target="_blank">Website</a></td>
+        <td><a href="/payments/{{ recurringpayment.pk }}">Edit</a></td>
       </tr>
       {% endfor %}
     </tbody>

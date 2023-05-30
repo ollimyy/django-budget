@@ -1,3 +1,4 @@
+from typing import Optional
 from django.views.generic import *
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.forms import UserCreationForm
@@ -28,3 +29,12 @@ class RecurringPaymentCreateView(LoginRequiredMixin, CreateView):
 	def form_valid(self, form):
 		form.instance.owner = self.request.user
 		return super().form_valid(form)
+
+class RecurringPaymentUpdateView(UserPassesTestMixin, UpdateView):
+	model = RecurringPayment
+	fields = ['name', 'amount', 'url', 'category']
+	success_url = "/payments"
+
+	def test_func(self):
+		object = self.get_object()
+		return self.request.user == object.owner
