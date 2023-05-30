@@ -3,10 +3,16 @@
 {% block "content" %}
 
 {% if not user.username %}
-    <p>
-        <a href="/accounts/login">Login</a>
-        <a href="/accounts/register">Register</a>
-    </p>
+<p><a href="/accounts/login">Login</a></p>
+<p><a href="/accounts/register"><button>Register</button></a></p>
 {% endif %}
-    <p>HELLO!</p>
+    <p><b>Welcome to SubCaptain, your ultimate 
+        tool for effortlessly managing and tracking your subscriptions and other recurring payments.</b></p>
+
+        <p>Are you tired of losing track of your various subscriptions? 
+            Do you struggle to remember payment due dates? 
+            My app is here to help! With intuitive and 
+            user-friendly interface, you can regain control 
+            over your financial commitments and stay on top of your 
+            subscriptions like never before.</p>
 {% endblock "content" %}
