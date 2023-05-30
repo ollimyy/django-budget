@@ -15,19 +15,19 @@
 				<tr>
 					<th>Service</th>
 					<th>Amount</th>
-					<th>Website</th>
+					<th></th>
 				</tr>
 			</thead>
 			<tbody>
 			{% for recurringpayment in category.list %}
 			  <tr>
-				<td><a href="/payments/{{ recurringpayment.pk }}">{{ recurringpayment }}</a></td>
-				<td>{{ recurringpayment.amount }}</td>
 				{% if recurringpayment.url %}
-					<td><a href="{{ recurringpayment.url }}" target="_blank">Visit</a></td>
+					<td><a href="{{ recurringpayment.url }}" target="_blank">{{ recurringpayment }}</a></td>
 				{% else %}
-                    <td></td>
+                    <td>{{ recurringpayment }}</td>
                 {% endif %}
+				<td>{{ recurringpayment.amount }}</td>
+				<td><a href="/payments/{{ recurringpayment.pk }} ">Edit</a></td>
 			  </tr>
 			{% endfor %}
 			</tbody>

@@ -7,7 +7,7 @@
 	<ul>
     {% for object in object_list %}
 		<li>
-            <b><a href="/categories/{{ object.pk }}">{{ object }}</a></b>
+            <b>{{ object }}</b> - <a href="/categories/{{ object.pk }}">Edit</a>
         </li>
 	{% endfor %}
 	</ul>
