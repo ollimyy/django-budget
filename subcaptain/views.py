@@ -8,7 +8,7 @@ from django.db.models import Sum
 from .models import *
 
 class HomeView(TemplateView):
-    template_name = 'budget/home.html'
+    template_name = 'subcaptain/home.html'
 
 
 class RegisterView(SuccessMessageMixin, CreateView):

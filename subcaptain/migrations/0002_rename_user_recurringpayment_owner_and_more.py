@@ -7,7 +7,7 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('budget', '0001_initial'),
+        ('subcaptain', '0001_initial'),
     ]
 
     operations = [
@@ -19,7 +19,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='recurringpayment',
             name='category',
-            field=models.ForeignKey(blank=True, on_delete=django.db.models.deletion.CASCADE, to='budget.paymentcategory'),
+            field=models.ForeignKey(blank=True, on_delete=django.db.models.deletion.CASCADE, to='subcaptain.paymentcategory'),
         ),
         migrations.AlterField(
             model_name='recurringpayment',

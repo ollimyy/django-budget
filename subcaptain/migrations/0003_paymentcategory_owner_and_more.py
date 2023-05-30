@@ -9,7 +9,7 @@ class Migration(migrations.Migration):
 
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
-        ('budget', '0002_rename_user_recurringpayment_owner_and_more'),
+        ('subcaptain', '0002_rename_user_recurringpayment_owner_and_more'),
     ]
 
     operations = [
@@ -22,6 +22,6 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='recurringpayment',
             name='category',
-            field=models.ForeignKey(blank=True, on_delete=django.db.models.deletion.CASCADE, related_name='recurringPayments', to='budget.paymentcategory'),
+            field=models.ForeignKey(blank=True, on_delete=django.db.models.deletion.CASCADE, related_name='recurringPayments', to='subcaptain.paymentcategory'),
         ),
     ]
