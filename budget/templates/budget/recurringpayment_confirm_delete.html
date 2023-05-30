@@ -1,0 +1,12 @@
+{% extends "budget/base.html" %}
+
+{% block "content" %}
+        <p>Are you sure you want to delete payment <b>{{ object }}</b>?</p>
+        <p>This cannot be undone.</p>
+
+        <form method=post>
+                {% csrf_token %}
+                <input type=submit value="Delete">
+        </form>
+        <p><a href="/payments/{{object.pk}}">Cancel</a></p>
+{% endblock "content" %}

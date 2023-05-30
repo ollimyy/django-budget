@@ -12,5 +12,6 @@ urlpatterns = [
     path('payments', RecurringPaymentListView.as_view()),
     path('payments/new', RecurringPaymentCreateView.as_view()),
     path('payments/<int:pk>', RecurringPaymentUpdateView.as_view()),
+    path('payments/<int:pk>/delete', RecurringPaymentDeleteView.as_view()),
 
 ]

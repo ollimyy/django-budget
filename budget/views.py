@@ -17,7 +17,7 @@ class RegisterView(SuccessMessageMixin, CreateView):
 
 class RecurringPaymentListView(LoginRequiredMixin, ListView):
 	model = RecurringPayment
-	        
+
 	def get_queryset(self):
 		return RecurringPayment.objects.filter(owner__username=self.request.user)
 	
@@ -33,6 +33,14 @@ class RecurringPaymentCreateView(LoginRequiredMixin, CreateView):
 class RecurringPaymentUpdateView(UserPassesTestMixin, UpdateView):
 	model = RecurringPayment
 	fields = ['name', 'amount', 'url', 'category']
+	success_url = "/payments"
+
+	def test_func(self):
+		object = self.get_object()
+		return self.request.user == object.owner
+	
+class RecurringPaymentDeleteView(UserPassesTestMixin, DeleteView):
+	model = RecurringPayment
 	success_url = "/payments"
 
 	def test_func(self):

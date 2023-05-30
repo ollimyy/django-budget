@@ -6,6 +6,6 @@
         {{ form.as_p }}
         <a href="/payments">Cancel</a>
         <input type="submit" value="Save">
-    
     </form>
+    <a href="/payments/{{object.pk}}/delete">Delete</a>
 {% endblock "content" %}
