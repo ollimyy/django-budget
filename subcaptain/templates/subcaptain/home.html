@@ -5,6 +5,8 @@
 {% if not user.username %}
 <p><a href="/accounts/login">Login</a></p>
 <p><a href="/accounts/register"><button>Register</button></a></p>
+{% else %}
+<p><a href="/payments"><button>Go to app</button></a></p>
 {% endif %}
     <p><b>Welcome to SubCaptain, your ultimate 
         tool for effortlessly managing and tracking your subscriptions and other recurring payments.</b></p>
