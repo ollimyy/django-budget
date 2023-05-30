@@ -5,6 +5,7 @@
 
 	<h2>Your payments:</h2>
 	<p><a href="/payments/new">Add payment</a></p>
+	<p>Total price of all subscriptions: <b>{{ total_amount }}</b></p>
 	{% regroup recurringpayment_list by category as grouped_list %}
 	
 	{% for category in grouped_list %}
@@ -32,6 +33,7 @@
 			  </tr>
 			{% endfor %}
 			</tbody>
-		  </table>
+		</table>
+		
 	{% endfor %}
 {% endblock "content" %}
