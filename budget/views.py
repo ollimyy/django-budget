@@ -68,6 +68,7 @@ class RecurringPaymentUpdateView(UserPassesTestMixin, UpdateView):
 		form.fields['category'].queryset = PaymentCategory.objects.filter(
             owner__username__in=[self.request.user.username, 'admin']
         )
+		form.fields['category'].required = True
 		return form
 	
 
