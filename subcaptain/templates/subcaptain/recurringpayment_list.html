@@ -5,9 +5,8 @@
 
 	<h2>Your Services:</h2>
 	<p><a href="/payments/new"><button>Add service</button></a></p>
-	<p>Total amount of all services: <b>{{ total_amount }}</b></p>
-	{% regroup recurringpayment_list by category as grouped_list %}
-	
+	<p>Total amount of all services: <b>{{ total_amount|floatformat:2 }}</b></p>
+	{% regroup recurringpayment_list by category.name as grouped_list %}
 	{% for category in grouped_list %}
 		<h3>{{ category.grouper }}</h3>
 		<table>
@@ -32,6 +31,11 @@
 			{% endfor %}
 			</tbody>
 		</table>
-		
+        {% for item in category_total %}
+            {% if item.category__name ==  category.grouper %}
+				<p>Total amount: {{item.total_amount|floatformat:2 }}</p>
+			{% endif %}
+        {% endfor %}
 	{% endfor %}
+
 {% endblock "content" %}
