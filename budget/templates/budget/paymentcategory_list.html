@@ -1,0 +1,13 @@
+{% extends "budget/base.html" %}
+
+{% block "content" %}
+	<h2>Your custom categories:</h2>
+	<a href="/categories/new"><button>Add category</button></a>
+	<ul>
+    {% for object in object_list %}
+		<li>
+            <a href="/categories/{{ object.pk }}">{{ object }}</a>
+        </li>
+	{% endfor %}
+	</ul>
+{% endblock "content" %}

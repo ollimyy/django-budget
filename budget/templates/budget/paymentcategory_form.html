@@ -1,12 +1,12 @@
 {% extends "budget/base.html" %}
 
 {% block "content" %}
+<h2>Create new category:</h2>
     <form method="post">
-        <h2>Create new payment:</h2>
         {% csrf_token %}
         {{ form.as_p }}
-        <a href="/payments">Cancel</a>
+        <a href="/categories">Cancel</a>
         <input type="submit" value="Save">
     </form>
-    <a href="/payments/{{object.pk}}/delete">Delete</a>
+    <a href="/categories/{{object.pk}}/delete">Delete</a>
 {% endblock "content" %}
