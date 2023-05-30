@@ -14,7 +14,8 @@ class RecurringPayment(models.Model):
     url = models.URLField(blank=True)
     category = models.ForeignKey(
         PaymentCategory, 
-        on_delete=models.CASCADE, 
+        on_delete=models.CASCADE,
+        related_name='recurringPayments',
         blank=True)
     
     def __str__(self):

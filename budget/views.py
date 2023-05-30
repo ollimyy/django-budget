@@ -17,7 +17,7 @@ class RegisterView(SuccessMessageMixin, CreateView):
 
 class RecurringPaymentListView(LoginRequiredMixin, ListView):
 	model = RecurringPayment
-        
+	        
 	def get_queryset(self):
 		return RecurringPayment.objects.filter(owner__username=self.request.user)
 	
