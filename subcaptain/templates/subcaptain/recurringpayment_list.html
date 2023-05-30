@@ -3,7 +3,7 @@
 {% block "content" %}
 	<a href="/categories"><b>Manage categories</b></a></p> 
 
-	<h2>Your payments:</h2>
+	<h2>Your Services:</h2>
 	<p><a href="/payments/new"><button>Add service</button></a></p>
 	<p>Total price of all services: <b>{{ total_amount }}</b></p>
 	{% regroup recurringpayment_list by category as grouped_list %}
