@@ -19,8 +19,5 @@ class RecurringPayment(models.Model):
         related_name='recurringPayments',
         blank=True)
     
-    class Meta:
-        unique_together = ['name', 'owner']
-    
     def __str__(self):
         return self.name
