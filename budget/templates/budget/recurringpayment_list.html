@@ -1,10 +1,10 @@
 {% extends "budget/base.html" %}
 
 {% block "content" %}
-	<a href="/categories">Manage categories</a></p> 
+	<a href="/categories"><b>Manage categories</b></a></p> 
 
 	<h2>Your payments:</h2>
-	<p><a href="/payments/new">Add payment</a></p>
+	<p><a href="/payments/new"><button>Add service</button></a></p>
 	<p>Total price of all services: <b>{{ total_amount }}</b></p>
 	{% regroup recurringpayment_list by category as grouped_list %}
 	
@@ -16,20 +16,18 @@
 					<th>Service</th>
 					<th>Amount</th>
 					<th>Website</th>
-					<th></th>
 				</tr>
 			</thead>
 			<tbody>
 			{% for recurringpayment in category.list %}
 			  <tr>
-				<td>{{ recurringpayment }}</td>
+				<td><a href="/payments/{{ recurringpayment.pk }}">{{ recurringpayment }}</a></td>
 				<td>{{ recurringpayment.amount }}</td>
 				{% if recurringpayment.url %}
 					<td><a href="{{ recurringpayment.url }}" target="_blank">Visit</a></td>
 				{% else %}
                     <td></td>
                 {% endif %}
-				<td><a href="/payments/{{ recurringpayment.pk }}">Edit</a></td>
 			  </tr>
 			{% endfor %}
 			</tbody>

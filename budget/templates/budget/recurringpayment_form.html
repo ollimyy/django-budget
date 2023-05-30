@@ -1,12 +1,12 @@
 {% extends "budget/base.html" %}
 
 {% block "content" %}
-    <form method="post">
-        <h2>Create new payment:</h2>
-        {% csrf_token %}
-        {{ form.as_p }}
-        <a href="/payments">Cancel</a>
-        <input type="submit" value="Save">
+<form method="post">
+    <h2>Create new payment:</h2>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Save">
+    <b><a href="/payments">Cancel</a></b>
     </form>
     <a href="/payments/{{object.pk}}/delete">Delete</a>
 {% endblock "content" %}
