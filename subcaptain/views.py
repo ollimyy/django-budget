@@ -32,8 +32,8 @@ class RecurringPaymentListView(LoginRequiredMixin, ListView):
 		if total_amount is None:
 			total_amount = 0.0
 
-		category_total = RecurringPayment.objects.values('category__name').annotate(total_amount=Sum('amount'))
-	
+		category_total = payments.values('category__name').annotate(total_amount=Sum('amount'))	
+		
 		context['total_amount'] = total_amount
 		context['category_total'] = category_total
 		return context
