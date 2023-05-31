@@ -2,4 +2,6 @@ SubCaptain is a web application that allows users to stay on top and keep track 
 
 The app is available at: http://161.35.194.144
 
+CSS: https://github.com/xz/new.css
+
 ![App Screenshot](/screenshot.png)
