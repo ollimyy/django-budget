@@ -6,7 +6,8 @@
 	<h2>Your Services:</h2>
 	<p><a href="/payments/new"><b>Add service</b></a></p>
 	<p>Total amount of all services: <b>{{ total_amount|floatformat:2 }}</b></p>
-	{% regroup recurringpayment_list by category as grouped_list %}
+
+	{% regroup object_list|dictsort:'category.name' by category.name as grouped_list %}
 	{% for category in grouped_list %}
 		<h3>{{ category.grouper }}</h3>
 		<table>
