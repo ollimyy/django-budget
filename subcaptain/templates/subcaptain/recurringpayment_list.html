@@ -1,10 +1,10 @@
 {% extends "subcaptain/base.html" %}
 
 {% block "content" %}
-	<a href="/categories"><b>Manage categories</b></a></p> 
+	<p><a href="/categories">Manage categories</a></p> 
 
 	<h2>Your Services:</h2>
-	<p><a href="/payments/new"><button>Add service</button></a></p>
+	<p><a href="/payments/new"><b>Add service</b></a></p>
 	<p>Total amount of all services: <b>{{ total_amount|floatformat:2 }}</b></p>
 	{% regroup recurringpayment_list by category as grouped_list %}
 	{% for category in grouped_list %}

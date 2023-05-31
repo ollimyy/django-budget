@@ -1,9 +1,9 @@
 {% extends "subcaptain/base.html" %}
 
 {% block "content" %}
-    <p><a href="/payments"><b>Back to services</b></a></p>
+    <p><a href="/payments">Back to services</a></p>
 	<h2>Your Custom Categories:</h2>
-	<p><a href="/categories/new"><button>Add category</button></a></p>
+	<p><a href="/categories/new"><b>Add category</b></a></p>
 	<ul>
     {% for object in object_list %}
 		<li>
