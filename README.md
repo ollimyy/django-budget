@@ -51,6 +51,6 @@ python manage.py runserver
 
 6. Navigate to http://localhost:8000/ in your web browser to start using the application.
 
-## Acknoledgements
+## Acknowledgements
 * The styling used in this project: https://github.com/xz/new.css
-* This project was built during the (Python - Idea to Production)[https://terokarvinen.com/2023/python-web-idea-to-production/?fromSearch=idea%20to%20production] course.
+* This project was built during the [Python - Idea to Production](https://terokarvinen.com/2023/python-web-idea-to-production/?fromSearch=idea%20to%20production) course.
